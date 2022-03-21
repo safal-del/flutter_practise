@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practise/profile.dart';
 import 'package:flutter_practise/settling.dart';
+import 'package:flutter_practise/logoutdashboard.dart';
 
 class MainDrawer extends StatefulWidget {
   const MainDrawer({Key? key}) : super(key: key);
@@ -50,7 +51,7 @@ class _MainDrawerState extends State<MainDrawer> {
 
           ListTile(
             leading: Icon(Icons.settings),
-            title: Text('Setting'),
+            title: Name('Setting'),
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>settling()));
             },
@@ -59,6 +60,9 @@ class _MainDrawerState extends State<MainDrawer> {
           ListTile(
             leading: Icon(Icons.arrow_back),
             title: Text('Log-out'),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LoGout()));
+            },
 
           )
         ],
@@ -66,5 +70,9 @@ class _MainDrawerState extends State<MainDrawer> {
       ),
     );
 
+  }
+   Widget Name(String name){
+    return Text(name);
+    
   }
 }

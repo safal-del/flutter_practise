@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_practise/navdrwer.dart';
 
 class profile_setting extends StatefulWidget {
   const profile_setting({Key? key}) : super(key: key);
@@ -23,7 +24,11 @@ class _profile_settingState extends State<profile_setting> {
 
           TextFormField(decoration: InputDecoration(labelText: 'username'),),
           TextFormField(decoration: InputDecoration(labelText: 'password'), keyboardType: null ,),
-          TextButton(onPressed: (){}, child: Text('confirm'))
+          TextButton(onPressed: (){
+
+
+
+          }, child: Text('confirm'))
 
 
 
@@ -32,4 +37,5 @@ class _profile_settingState extends State<profile_setting> {
 
     );
   }
+
 }

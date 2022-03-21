@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practise/navdrwer.dart';
 
@@ -27,16 +28,24 @@ class _profileState extends State<profile> {
         child: Column(
           mainAxisAlignment:MainAxisAlignment.center,
           children: [
-            name(),
-           email(),
-            number(),
-            password(),
+            Image(image: AssetImage('assets/this.jpg'),
+            height: 300,width: 350,),
+            SizedBox(height: 10,),
+            Text('Name:Safal Karki'),
+            SizedBox(height: 10,),
+            Text('Address:Dhapakhel'),
+            SizedBox(height: 10,),
+            Text('Bio: fun'),
+            SizedBox(height: 10,),
+            Text('Work:Developer'),
+            SizedBox(height: 10,),
+
             RaisedButton(onPressed: (){
               showDialog(context: context, builder:(BuildContext context)=>AlertDialog(title: Text('thank you for submitting'),));
 
 
-             Text('thi is it');
-            })
+
+            },child: Text('view details'),)
 
 
           ],
@@ -49,22 +58,3 @@ class _profileState extends State<profile> {
   }
 }
 
-Widget name(){
-  return TextFormField(decoration: InputDecoration(labelText:'name'));
-
-  }
-
-
-
-Widget email(){
-  return TextFormField(decoration: InputDecoration(labelText:'email'));
-}
-
-Widget password(){
-  return TextFormField(decoration: InputDecoration(labelText:'number'));
-}
-Widget number(){
-  return TextFormField(decoration: InputDecoration(labelText:'password',
-  )
-  );
-}

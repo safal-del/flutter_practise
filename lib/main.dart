@@ -3,173 +3,174 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_practise/homepage.dart';
 import 'package:flutter_practise/navdrwer.dart';
 
 
-void main() => runApp(MaterialApp(home: layouts()
+void main() => runApp(MaterialApp(home: Home()
 ));
 
-class layouts extends StatefulWidget {
-  @override
-  State<layouts> createState() => _layoutsState();
-}
-
-class _layoutsState extends State<layouts> {
-  @override
-  Widget build(BuildContext context) {
-
-
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Layouts in flutter',
-          ),
-          centerTitle: true,
-        ),
-        drawer: MainDrawer(),
-        body: Column(
-          children: [
-            Column(
-              children: [
-                Image.asset(
-                  'assets/this.jpg',
-                  height: 90,
-                  width: 450,
-                )
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Column(
-              children: [
-                Row(
-                  children: [
-                    SizedBox(width: 70),
-                    Text('Sea-Food are available',
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                    SizedBox(
-                      width: 80,
-                    ),
-                    Text('* 41', style: TextStyle(fontWeight: FontWeight.bold)),
-                  ],
-                ),
-                SizedBox(height: 4),
-                Row(
-                  children: [
-                    SizedBox(width: 70),
-                    Text('Call us now',
-                        style: TextStyle(fontWeight: FontWeight.bold))
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Column(
-              children: [
-                SizedBox(width: 10),
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        Padding(padding: EdgeInsets.fromLTRB(0, 10, 10, 10)),
-                        RaisedButton(
-                          child: Icon(Icons.phone),
-                          color: Colors.white,
-                          elevation: 0.0,
-                          onPressed: () {
-                            showDialog<String>(
-                                context: context,
-                                builder: (BuildContext context) => AlertDialog(
-                                      title: const Text('call now'),
-                                      content: const Text('9843661699'),
-                                      actions: <Widget>[
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(context, 'Cancel'),
-                                          child: const Text('Cancel'),
-                                        ),
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(context, 'OK'),
-                                          child: const Text('OK'),
-                                        ),
-                                      ],
-                                    ));
-                          },
-                        ),
-                        SizedBox(
-                          width: 80,
-                        ),
-                        Icon(Icons.email),
-                        SizedBox(
-                          width: 120,
-                        ),
-                        Icon(Icons.email)
-                      ],
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Row(
-                      children: [
-                        Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 10)),
-                        Text('CAll'),
-                        SizedBox(
-                          width: 80,
-                        ),
-                        Text(
-                          'infores@gmail.com',
-                        ),
-                        SizedBox(
-                          width: 35,
-                        ),
-                        Text('bagdol, kathmandu'),
-
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Column(
-              children: [
-                Padding(padding: EdgeInsets.fromLTRB(4, 4, 4, 4)),
-                Text(
-                  'aja ma sanga timi tadha chau timro maya sadhai ma sanga cha bhawana ma dubne nagara',
-                  
-                ),
-                Form(child:Column(
-                  children: [
-
-                  ],
-                )),
-                
-
-              ],
-            ),
-
-            Text('hola')
-          ],
-        ));
-  }
-  String name(){
-    return "hello";
-  }
-  Widget namee(String name){
-    return Text(
-      name,
-      style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),
-    );
-  }
-
-
-}
+// class layouts extends StatefulWidget {
+//   @override
+//   State<layouts> createState() => _layoutsState();
+// }
+//
+// class _layoutsState extends State<layouts> {
+//   @override
+//   Widget build(BuildContext context) {
+//
+//
+//     return Scaffold(
+//         appBar: AppBar(
+//           title: Text(
+//             'Layouts in flutter',
+//           ),
+//           centerTitle: true,
+//         ),
+//         drawer: MainDrawer(),
+//         body: Column(
+//           children: [
+//             Column(
+//               children: [
+//                 Image.asset(
+//                   'assets/this.jpg',
+//                   height: 90,
+//                   width: 450,
+//                 )
+//               ],
+//             ),
+//             SizedBox(
+//               height: 15,
+//             ),
+//             Column(
+//               children: [
+//                 Row(
+//                   children: [
+//                     SizedBox(width: 70),
+//                     Text('Sea-Food are available',
+//                         style: TextStyle(fontWeight: FontWeight.bold)),
+//                     SizedBox(
+//                       width: 80,
+//                     ),
+//                     Text('* 41', style: TextStyle(fontWeight: FontWeight.bold)),
+//                   ],
+//                 ),
+//                 SizedBox(height: 4),
+//                 Row(
+//                   children: [
+//                     SizedBox(width: 70),
+//                     Text('Call us now',
+//                         style: TextStyle(fontWeight: FontWeight.bold))
+//                   ],
+//                 ),
+//               ],
+//             ),
+//             SizedBox(
+//               height: 15,
+//             ),
+//             Column(
+//               children: [
+//                 SizedBox(width: 10),
+//                 Column(
+//                   children: [
+//                     Row(
+//                       children: [
+//                         Padding(padding: EdgeInsets.fromLTRB(0, 10, 10, 10)),
+//                         RaisedButton(
+//                           child: Icon(Icons.phone),
+//                           color: Colors.white,
+//                           elevation: 0.0,
+//                           onPressed: () {
+//                             showDialog<String>(
+//                                 context: context,
+//                                 builder: (BuildContext context) => AlertDialog(
+//                                       title: const Text('call now'),
+//                                       content: const Text('9843661699'),
+//                                       actions: <Widget>[
+//                                         TextButton(
+//                                           onPressed: () =>
+//                                               Navigator.pop(context, 'Cancel'),
+//                                           child: const Text('Cancel'),
+//                                         ),
+//                                         TextButton(
+//                                           onPressed: () =>
+//                                               Navigator.pop(context, 'OK'),
+//                                           child: const Text('OK'),
+//                                         ),
+//                                       ],
+//                                     ));
+//                           },
+//                         ),
+//                         SizedBox(
+//                           width: 80,
+//                         ),
+//                         Icon(Icons.email),
+//                         SizedBox(
+//                           width: 120,
+//                         ),
+//                         Icon(Icons.email)
+//                       ],
+//                     ),
+//                     SizedBox(
+//                       height: 4,
+//                     ),
+//                     Row(
+//                       children: [
+//                         Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 10)),
+//                         Text('CAll'),
+//                         SizedBox(
+//                           width: 80,
+//                         ),
+//                         Text(
+//                           'infores@gmail.com',
+//                         ),
+//                         SizedBox(
+//                           width: 35,
+//                         ),
+//                         Text('bagdol, kathmandu'),
+//
+//                       ],
+//                     ),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//             SizedBox(
+//               height: 15,
+//             ),
+//             Column(
+//               children: [
+//                 Padding(padding: EdgeInsets.fromLTRB(4, 4, 4, 4)),
+//                 Text(
+//                   'aja ma sanga timi tadha chau timro maya sadhai ma sanga cha bhawana ma dubne nagara',
+//
+//                 ),
+//                 Form(child:Column(
+//                   children: [
+//
+//                   ],
+//                 )),
+//
+//
+//               ],
+//             ),
+//
+//             Text('hola')
+//           ],
+//         ));
+//   }
+//   String name(){
+//     return "hello";
+//   }
+//   Widget namee(String name){
+//     return Text(
+//       name,
+//       style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),
+//     );
+//   }
+//
+//
+// }
 
 
 /*class SizeConfig {
